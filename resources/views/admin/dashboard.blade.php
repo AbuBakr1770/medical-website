@@ -166,7 +166,7 @@
         </div>
     </div>
 
-    <!-- Content Row -->
+    <!-- Content Row Pending orders-->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">{{ $websiteLang->where('lang_key','pending_order')->first()->custom_lang }}</h6>
@@ -215,43 +215,43 @@
 
 
     <!-- Content Row -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">{{ $websiteLang->where('lang_key','doc_payment_in')->first()->custom_lang }} {{ date('F, Y') }}</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th width="5%">{{ $websiteLang->where('lang_key','serial')->first()->custom_lang }}</th>
-                            <th width="15%">{{ $websiteLang->where('lang_key','name')->first()->custom_lang }}</th>
-                            <th width="15%">{{ $websiteLang->where('lang_key','email')->first()->custom_lang }}</th>
-                            <th width="15%">{{ $websiteLang->where('lang_key','phone')->first()->custom_lang }}</th>
-                            <th width="5%">{{ $websiteLang->where('lang_key','payment')->first()->custom_lang }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($doctors as $index => $doctor)
-                        <tr>
-                            <td>{{ ++$index }}</td>
-                            <td>{{ ucfirst($doctor->name) }}</td>
-                            <td>{{ $doctor->email }}</td>
-                            <td>{{ $doctor->phone }}</td>
-                            @php
-                                $total=$doctorPayments->where('doctor_id',$doctor->id)->sum('appointment_fee')
-                            @endphp
-                            <td>
-                                {{ $currency->currency_icon }}{{ $total }}
-                            </td>
-                        </tr>
-                        @endforeach
+{{--    <div class="card shadow mb-4">--}}
+{{--        <div class="card-header py-3">--}}
+{{--            <h6 class="m-0 font-weight-bold text-primary">{{ $websiteLang->where('lang_key','doc_payment_in')->first()->custom_lang }} {{ date('F, Y') }}</h6>--}}
+{{--        </div>--}}
+{{--        <div class="card-body">--}}
+{{--            <div class="table-responsive">--}}
+{{--                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">--}}
+{{--                    <thead>--}}
+{{--                        <tr>--}}
+{{--                            <th width="5%">{{ $websiteLang->where('lang_key','serial')->first()->custom_lang }}</th>--}}
+{{--                            <th width="15%">{{ $websiteLang->where('lang_key','name')->first()->custom_lang }}</th>--}}
+{{--                            <th width="15%">{{ $websiteLang->where('lang_key','email')->first()->custom_lang }}</th>--}}
+{{--                            <th width="15%">{{ $websiteLang->where('lang_key','phone')->first()->custom_lang }}</th>--}}
+{{--                            <th width="5%">{{ $websiteLang->where('lang_key','payment')->first()->custom_lang }}</th>--}}
+{{--                        </tr>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
+{{--                        @foreach ($doctors as $index => $doctor)--}}
+{{--                        <tr>--}}
+{{--                            <td>{{ ++$index }}</td>--}}
+{{--                            <td>{{ ucfirst($doctor->name) }}</td>--}}
+{{--                            <td>{{ $doctor->email }}</td>--}}
+{{--                            <td>{{ $doctor->phone }}</td>--}}
+{{--                            @php--}}
+{{--                                $total=$doctorPayments->where('doctor_id',$doctor->id)->sum('appointment_fee')--}}
+{{--                            @endphp--}}
+{{--                            <td>--}}
+{{--                                {{ $currency->currency_icon }}{{ $total }}--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        @endforeach--}}
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+{{--                    </tbody>--}}
+{{--                </table>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- Content Row -->
 
 
@@ -260,22 +260,22 @@
     <div class="row">
 
         <!-- Area Chart -->
-        <div class="col">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div
-                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary"> {{ $websiteLang->where('lang_key','earnings_in')->first()->custom_lang }} {{ date('F, Y') }}</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--        <div class="col">--}}
+{{--            <div class="card shadow mb-4">--}}
+{{--                <!-- Card Header - Dropdown -->--}}
+{{--                <div--}}
+{{--                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">--}}
+{{--                    <h6 class="m-0 font-weight-bold text-primary"> {{ $websiteLang->where('lang_key','earnings_in')->first()->custom_lang }} {{ date('F, Y') }}</h6>--}}
+{{--                </div>--}}
+{{--                <!-- Card Body -->--}}
+{{--                <div class="card-body">--}}
+{{--                    <div class="chart-area">--}}
+{{--                        <canvas id="myAreaChart"></canvas>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 
 <script>

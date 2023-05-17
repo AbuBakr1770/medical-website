@@ -50,10 +50,10 @@ class FeatureController extends Controller
     {
 
         // project demo mode check
-        if(env('PROJECT_MODE')==0){
-            $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
-            return redirect()->back()->with($notification);
-        }
+//        if(env('PROJECT_MODE')==0){
+//            $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
+//            return redirect()->back()->with($notification);
+//        }
         // end
 
         $valid_lang=ValidationText::all();
@@ -106,10 +106,10 @@ class FeatureController extends Controller
     {
 
                // project demo mode check
-               if(env('PROJECT_MODE')==0){
-                $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
-                return redirect()->back()->with($notification);
-            }
+//               if(env('PROJECT_MODE')==0){
+//                $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
+//                return redirect()->back()->with($notification);
+//            }
             // end
 
 
@@ -172,10 +172,10 @@ class FeatureController extends Controller
     {
 
         // project demo mode check
-        if(env('PROJECT_MODE')==0){
-        $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
-        return redirect()->back()->with($notification);
-    }
+//        if(env('PROJECT_MODE')==0){
+//        $notification=array('messege'=>env('NOTIFY_TEXT'),'alert-type'=>'error');
+//        return redirect()->back()->with($notification);
+//    }
     // end
 
         $old_image=$feature->background_image;
